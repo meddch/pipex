@@ -6,11 +6,11 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 19:26:05 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/16 21:19:34 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/21 16:48:37 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mandatory/pipex.h"
+#include "../pipex.h"
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {

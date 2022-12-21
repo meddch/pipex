@@ -6,11 +6,11 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 19:41:42 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/16 21:19:42 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/21 16:48:48 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mandatory/pipex.h"
+#include "../pipex.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

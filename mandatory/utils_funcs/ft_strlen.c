@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/24 22:06:30 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/16 21:19:29 by mechane          ###   ########.fr       */
+/*   Created: 2022/12/16 13:16:09 by mechane           #+#    #+#             */
+/*   Updated: 2022/12/21 16:48:45 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mandatory/pipex.h"
+#include "../pipex.h"
 
-char	*ft_strdup(const char *src)
+size_t	ft_strlen(const char *s)
 {
-	char	*cp;
-	size_t	i;
+	size_t		i;
 
 	i = 0;
-	cp = (char *)malloc(ft_strlen(src) + 1);
-	if (!cp)
-		return (NULL);
-	while (src[i])
-	{
-		cp[i] = src[i];
+	if (!s)
+		return (0);
+	while (s[i] != '\0')
 		i++;
-	}
-	cp[i] = '\0';
-	return (cp);
+	return (i);
 }

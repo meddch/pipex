@@ -1,2 +1,0 @@
-Inside the pipe, everything goes to one of its ends, one end will write and the other will read (more on this in section 4).
-end[1] is the child process, and end[0] the parent process: the child writes, while the parent reads. And since for something to be read, it must be written first, so cmd1 will be executed by the child, and cmd2 by the parent.

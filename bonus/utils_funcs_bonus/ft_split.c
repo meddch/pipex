@@ -6,11 +6,11 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:37:11 by mechane           #+#    #+#             */
-/*   Updated: 2022/12/16 21:19:53 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/21 17:03:24 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mandatory/pipex.h"
+#include "../pipex_bonus.h"
 
 static int	num_word(const char *str, char c)
 {

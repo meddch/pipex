@@ -6,11 +6,11 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:16:43 by mechane           #+#    #+#             */
-/*   Updated: 2022/12/16 21:19:21 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/21 16:48:58 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mandatory/pipex.h"
+#include "../pipex.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

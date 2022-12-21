@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 14:56:20 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/20 16:48:23 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/21 16:45:18 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 char	**find_paths(char **envp)
 {
@@ -45,4 +45,18 @@ void	child_free(t_pipex *pipex)
 	free(pipex->cmd);
 }
 
+void	parent_free(t_pipex *pipex)
+{
+	int	i;
+
+	i = 0;
+	close(pipex->infile);
+	close(pipex->outfile);
+	while (pipex->paths[i])
+	{
+		free(pipex->paths[i]);
+		i++;
+	}
+	free(pipex->paths);
+}
 
