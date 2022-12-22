@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:39:16 by mechane           #+#    #+#             */
-/*   Updated: 2022/12/21 16:44:59 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 16:03:30 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*get_cmd_path(char **paths, char *cmd)
 
 	if (!cmd || !*cmd)
 		return (NULL);
-	if (ft_strnstr(cmd,"./",2))
+	if (ft_strnstr(cmd, "./", 2))
 		return (cmd + 2);
 	if (access(cmd, 0) == 0)
 		return (cmd);
@@ -35,7 +35,6 @@ char	*get_cmd_path(char **paths, char *cmd)
 	}
 	return (NULL);
 }
-
 
 void	ft_exec(t_pipex pipex, char av[], char *envp[])
 {

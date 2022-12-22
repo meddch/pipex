@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 19:26:05 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/21 16:48:37 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 16:21:18 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	*newstr = '\0';
 	return (newstr - s1_len - s2_len);
 }
-

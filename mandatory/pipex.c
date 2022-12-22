@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:58:20 by mechane           #+#    #+#             */
-/*   Updated: 2022/12/20 16:55:57 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 16:20:26 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[], char *envp[])
 	pipex.infile = open(argv[1], O_RDONLY);
 	if (pipex.infile < 0)
 		msg_error(ERROR_INFILE);
-	pipex.outfile = open(argv[4],O_CREAT | O_TRUNC | O_RDWR, 0644);
+	pipex.outfile = open(argv[4], O_CREAT | O_TRUNC | O_RDWR, 0644);
 	if (pipex.outfile < 0)
 		msg_error(ERROR_OUTFILE);
 	if (pipe(pipex.pipe_fd) < 0)
@@ -29,9 +29,9 @@ int	main(int argc, char *argv[], char *envp[])
 	pipex.paths = find_paths(envp);
 	pipex.pid1 = fork();
 	if (pipex.pid1 == 0)
-		child_process(pipex , argv, envp);
+		child_process(pipex, argv, envp);
 	else
-		parent_process(pipex , argv, envp);
+		parent_process(pipex, argv, envp);
 	close(pipex.pipe_fd[0]);
 	close(pipex.pipe_fd[1]);
 	waitpid(pipex.pid1, NULL, 0);

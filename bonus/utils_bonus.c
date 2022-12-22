@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 14:56:20 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/21 16:45:18 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 16:19:31 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,3 @@ void	parent_free(t_pipex *pipex)
 	}
 	free(pipex->paths);
 }
-

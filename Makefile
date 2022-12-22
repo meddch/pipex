@@ -1,3 +1,6 @@
+GREEN = \033[0;32m
+BLUE = \033[0;34m
+NO_COLOR = \033[0m
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
@@ -14,21 +17,25 @@ OBJS_B = $(addsuffix .o, $(FILE_B))
 
 
 %.o : %.c $(HEADER)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c -o $@ $<
 	
-all: $(NAME)
+all : $(NAME)
+	@echo "$(BLUE)Building project 👀...$(NO_COLOR)"
+	@echo  "$(GREEN)Mandatory done successfully ✅ $(NO_COLOR)"
 
 $(NAME): $(OBJS_M) 
-		$(CC) $(OBJS_M) -o $(NAME)
+	@$(CC) $(OBJS_M) -o $(NAME)
 
 bonus : fclean $(OBJS_B)
-		$(CC) $(OBJS_B) $(GNL) -o $(NAME)
+	@$(CC) $(OBJS_B) $(GNL) -o $(NAME)
+	@echo  "$(GREEN)Bonus done successfully ✅$(NO_COLOR)"
 
 clean:
-	$(RM) $(OBJS_M) $(OBJS_B)
+	@$(RM) $(OBJS_M) $(OBJS_B)
+	@echo  "$(GREEN)all deleted ☠ $(NO_COLOR)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all 
 

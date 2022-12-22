@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:48:42 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/20 16:55:52 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 16:18:11 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-
 typedef struct s_pipex
 {
 	int		pipe_fd[2];
@@ -33,12 +32,11 @@ typedef struct s_pipex
 	char	*cmd;
 }t_pipex;
 
-
-# define ERROR_PIPE "Pipe"
-# define ERROR_INFILE "Infile"
-# define ERROR_OUTFILE "Outfile"
-# define ERROR_INPUT "Invalid number of arguments.\n"
-# define ERROR_CMD "Command not found\n"
+# define ERROR_PIPE "\033[0;31mPipe"
+# define ERROR_INFILE "\033[0;31mInfile"
+# define ERROR_OUTFILE "\033[0;31mOutfile"
+# define ERROR_INPUT "\033[0;31mInvalid number of arguments.\n"
+# define ERROR_CMD "\033[0;31mCommand not found\n"
 
 char	**find_paths(char **envp);
 void	child_free(t_pipex *pipex);
@@ -52,7 +50,7 @@ char	**ft_split(char const *s, char c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-void 	parent_process(t_pipex pipex, char *argv[], char *envp[]);
-void 	child_process(t_pipex pipex, char *argv[], char *envp[]);
+void	parent_process(t_pipex pipex, char *argv[], char *envp[]);
+void	child_process(t_pipex pipex, char *argv[], char *envp[]);
 
 #endif

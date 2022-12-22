@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:39:16 by mechane           #+#    #+#             */
-/*   Updated: 2022/12/20 16:55:40 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 16:20:06 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*get_cmd_path(char **paths, char *cmd)
 
 	if (!cmd || !*cmd)
 		return (NULL);
-	if (ft_strnstr(cmd,"./",2))
+	if (ft_strnstr(cmd, "./", 2))
 		return (cmd + 2);
 	if (access(cmd, 0) == 0)
 		return (cmd);
@@ -36,8 +36,7 @@ char	*get_cmd_path(char **paths, char *cmd)
 	return (NULL);
 }
 
-
-void child_process(t_pipex pipex, char *argv[], char *envp[])
+void	child_process(t_pipex pipex, char *argv[], char *envp[])
 {
 	dup2(pipex.infile, 0);
 	dup2(pipex.pipe_fd[1], 1);
@@ -53,7 +52,7 @@ void child_process(t_pipex pipex, char *argv[], char *envp[])
 	execve(pipex.cmd, pipex.cmd_args, envp);
 }
 
-void parent_process(t_pipex pipex, char *argv[], char *envp[])
+void	parent_process(t_pipex pipex, char *argv[], char *envp[])
 {
 	dup2(pipex.pipe_fd[0], 0);
 	dup2(pipex.outfile, 1);

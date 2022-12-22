@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:48:42 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/21 13:15:18 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 16:39:48 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PIPEX_BONUS_H
+# define PIPEX_BONUS_H
 
 # include <sys/wait.h>
 # include <sys/types.h>
@@ -22,10 +22,9 @@
 # include <fcntl.h>
 # include "../gnl/get_next_line.h"
 
-
-
 typedef struct s_pipex
 {
+	int		i;
 	int		infile;
 	int		outfile;
 	char	**paths;
@@ -33,13 +32,12 @@ typedef struct s_pipex
 	char	*cmd;
 }t_pipex;
 
-
-# define ERROR_PIPE "Pipe"
-# define ERROR_INFILE "Infile"
-# define ERROR_OUTFILE "Outfile"
-# define ERROR_INPUT "Invalid number of arguments.\n"
-# define ERROR_CMD "Command not found\n"
-# define ERROR_DOC_FILE "Error while creating or opening tmp doc_file"
+# define ERROR_PIPE "\033[0;31mPipe"
+# define ERROR_INFILE "\033[0;31mInfile"
+# define ERROR_OUTFILE "\033[0;31mOutfile"
+# define ERROR_INPUT "\033[0;31mInvalid number of arguments.\n"
+# define ERROR_CMD "\033[0;31mCommand not found\n"
+# define ERROR_DOC_FILE "\033[0;31mError while creating or opening tmp doc_file"
 
 char	**find_paths(char **envp);
 void	first_child(t_pipex pipex, char *av[], char *envp[]);
@@ -57,7 +55,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void	ft_exec(t_pipex pipex, char av[], char *envp[]);
-int		check_here_doc(char *argv);
-void	here_doc(char *argv);
+void	check_here_doc(t_pipex *pipex, char *av[]);
+void	here_doc(char *av);
 
 #endif
