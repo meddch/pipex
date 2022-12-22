@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:48:42 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/22 16:18:11 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 20:04:21 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_pipex
 # define ERROR_OUTFILE "\033[0;31mOutfile"
 # define ERROR_INPUT "\033[0;31mInvalid number of arguments.\n"
 # define ERROR_CMD "\033[0;31mCommand not found\n"
+# define ERROR_PATH "\033[0;31mPath not found\n"
 
 char	**find_paths(char **envp);
 void	child_free(t_pipex *pipex);

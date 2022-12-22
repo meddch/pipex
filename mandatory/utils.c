@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 14:56:20 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/22 16:20:41 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 20:14:18 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,18 @@
 
 char	**find_paths(char **envp)
 {
-	while (ft_strncmp("PATH", *envp, 4))
+	int	v;
+
+	v = 1;
+	while (*envp && v)
+	{
+		v = ft_strncmp("PATH", *envp, 4);
+		if (!v)
+			return (ft_split(*envp + 5, ':'));
 		envp++;
-	return (ft_split(*envp + 5, ':'));
+	}
+	ft_putstr(ERROR_PATH);
+	exit(1);
 }
 
 int	ft_putstr(char *error)
