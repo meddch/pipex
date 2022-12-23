@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:39:16 by mechane           #+#    #+#             */
-/*   Updated: 2022/12/22 19:56:00 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/23 10:39:05 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	parent_process(t_pipex pipex, char *argv[], char *envp[])
 	close(pipex.pipe_fd[1]);
 	pipex.cmd_args = ft_split(argv[3], ' ');
 	pipex.cmd = get_cmd_path(pipex.paths, pipex.cmd_args[0]);
+	wait(NULL);
 	if (!pipex.cmd)
 	{
 		child_free(&pipex);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 14:48:42 by bcaffere          #+#    #+#             */
-/*   Updated: 2022/12/22 20:11:45 by mechane          ###   ########.fr       */
+/*   Created: 2022/12/22 20:13:55 by mechane          #+#    #+#             */
+/*   Updated: 2022/12/22 20:18:14 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_pipex
 # define ERROR_CMD "\033[0;31mCommand not found\n"
 # define ERROR_DOC_FILE "\033[0;31mError while creating or opening tmp doc_file"
 # define ERROR_PATH "\033[0;31mPath not found\n"
+# define ERROR_FORK "\033[0;31mFork\n"
 
 char	**find_paths(char **envp);
 void	first_child(t_pipex pipex, char *av[], char *envp[]);

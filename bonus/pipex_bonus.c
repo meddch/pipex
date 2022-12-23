@@ -6,7 +6,7 @@
 /*   By: mechane <mechane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:58:20 by mechane           #+#    #+#             */
-/*   Updated: 2022/12/22 16:39:42 by mechane          ###   ########.fr       */
+/*   Updated: 2022/12/22 20:19:46 by mechane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	proccess(t_pipex pipex, char *argv, char **env)
 	if (pipe(fd) == -1)
 		exit (EXIT_FAILURE);
 	pid = fork();
+	if (pid == -1)
+		ft_putstr(ERROR_FORK);
 	if (pid == 0)
 	{
 		dup2(fd[1], 1);
@@ -41,6 +43,8 @@ void	proccess1(t_pipex pipex, char *argv, char **env)
 	if (pipe(fd) == -1)
 		exit (EXIT_FAILURE);
 	pid = fork();
+	if (pid == -1)
+		ft_putstr(ERROR_FORK);
 	if (pid == 0)
 	{
 		ft_exec(pipex, argv, env);
