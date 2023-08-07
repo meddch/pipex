@@ -1,7 +1,5 @@
 # Pipex
 
-![Pipex Logo](pipex-logo.png)
-
 Pipex is a 42 project that aims to replicate the functionality of the shell command pipeline (`|`) by implementing a simple version of it in C. The program takes in two file names and two shell commands as arguments and performs the same operations as the pipeline, redirecting the output of the first command as input to the second command.
 
 ## How to Use Pipex
